@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body style="background-image: url('assets/image/Course.jpg'); background-size: cover;">
+    <nav class="navbar navbar-expand-lg"
+        style="background-color: #C5D8A4; position:top; width: 100%; top:0; left: 0; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav" style="justify-content:space-around">
+            <ul class="navbar-nav">
+                <li class="nav-item active" style="padding: 0px 50px 0px 25px;">
+                    <a class="nav-link" routerLink="/admin/referee"
+                        style="color: #d3bd12;">Referee</a>
+                </li>
+                <li class="nav-item" style="padding: 0px 50px 0px 25px;">
+                    <a class="nav-link" href="/admin/Team" style="color: #d3bd12;">Team</a>
+                </li>
+                <li class="nav-item" style="padding: 0px 50px 0px 25px;">
+                    <a class="nav-link" href="/admin/Venue" style="color: #d3bd12;">Venues</a>
+                </li>
+                <li class="nav-item" style="padding: 0px 50px 0px 25px;">
+                    <a class="nav-link" href="/admin/customer" style="color: #d3bd12;">users</a>
+                </li>
+                <li class="nav-item" style="margin-left: 100pt; padding: 0px 50px 0px 100px;">
+                    <a class="nav-link" (click)="logout()"
+                        style="cursor: pointer;color: #d3bd12; margin-left: 100pt; ">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <h2 class="form-title"
+        style="text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; margin: 58px 0px 15px 0px; color: black;">
+        Add Venue</h2>
+
+    <div style="display: flex; justify-content: center;">
+
+        <form [formGroup]="reactiveForm" (ngSubmit)="submitAddVenue()" novalidate
+            style="text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+
+            <div class="form-group" style="opacity: .9;">
+
+                <input type="text" class="form-control" size="70" style="margin: 5% auto; width: 66%; height: 70px;;"
+                    placeholder="Enter Venue Name" [(ngModel)]="venue.venueName" formControlName="venueName">
+
+                <input type="text" class="form-control" size="70" style="margin: 5% auto; width: 66%; height: 70px;"
+                    placeholder="Enter Venue Capacity" [(ngModel)]="venue.capacity" formControlName="VenueCapacity">
+
+                <input type="text" class="form-control" size="70" style="margin: 5% auto; width: 66%; height: 70px; "
+                    placeholder="Enter Event Name" [(ngModel)]="venue.eventName" formControlName="eventName">
+
+                <input type="text" class="form-control" size="70"
+                    style="margin: 5% auto; width: 66%; height: 70px;" placeholder="Venue Location"
+                    [(ngModel)]="venue.location" formControlName="venueloaction">
+
+                <div class="form-group">
+                    <textarea class="form-control" placeholder="Enter Event Description" rows="3"
+                        [(ngModel)]="venue.description" formControlName="Description"></textarea>
+                </div>
+
+                <div style="display:flex; justify-content: space-between;">
+
+                    <div class="form-group" style="margin: 5% auto; width: 66%;">
+
+                        <button type="submit" class="btn btn-rounded" [disabled]="reactiveForm.invalid"
+                            style="background-color: aqua ;border-radius:50px 50px 50px 50px; border: 2px solid black; color: black;">Add
+                            Event</button>
+                    </div>
+
+                    <div class="form-group" style="margin: 5% auto; width: 66%;">
+                        <button routerLink="/admin/Venue" class="btn  btn-rounded"
+                            style="border-radius:50px 50px 50px 50px; background-color: aqua;border: 2px solid black; color: black;">Back
+                            To
+                            venue</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+
+
+</body>
+
+</html>

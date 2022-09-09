@@ -1,0 +1,107 @@
+<nav class="navbar navbar-expand-lg"
+    style="background-color: #C5D8A4; position:top; width: 100%; top:0; left: 0; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav" style="justify-content:space-around">
+        <ul class="navbar-nav">
+            <li class="nav-item active" style="padding: 0px 50px 0px 25px;">
+                <a class="nav-link" href="/admin/referee"
+                    style="color: #d3bd12; ">Referee</a>
+            </li>
+            <li class="nav-item" style="padding: 0px 50px 0px 25px;">
+                <a class="nav-link" href="/admin/Team" style="color: #d3bd12;">Team</a>
+            </li>
+            <li class="nav-item" style="padding: 0px 50px 0px 25px;">
+                <a class="nav-link" href="/admin/Venue" style="color: #d3bd12;">Venues</a>
+            </li>
+            <li class="nav-item" style="padding: 0px 50px 0px 25px;">
+                <a class="nav-link" routerLink="/admin/customer" style="color: #d3bd12; border-bottom: 2px solid #d3bd12 ;">users</a>
+            </li>
+            <li class="nav-item" style="margin-left: 100pt; padding: 0px 50px 0px 100px;">
+                <a class="nav-link" (click)="logout()"
+                    style="cursor: pointer;color: #d3bd12; margin-left: 100pt; ">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<body style="background-image: url('assets/image/Student.jpg'); background-size: cover;">
+
+    <form [formGroup]="studentForm" (ngSubmit)="onSubmit()" novalidate
+        style="display: flex ;justify-content: center; opacity: .8;">
+
+        <table align="center" cellpadding="10">
+
+            <div class="container">
+                <tr>
+                    <td>First Name:</td>
+                    <td><input type="text" maxlength="30" formControlName="customerName">
+                </tr>
+                <tr>
+                    <td>City:</td>
+                    <td><input type="text" maxlength="30" formControlName="city">
+                </tr>
+
+               
+                <tr>
+                    <td>Gender:</td>
+                    <td>
+                        Male <input type="radio" value="Male">
+                        Female <input type="radio" value="Female">
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>Phone Number:</td>
+                    <td>
+                        <input type="text" maxlength="10" formControlName="MobileNo">
+                </tr>
+
+                <tr>
+                    <td>Email Id:</td>
+                    <td><input type="text" maxlength="100"></td>
+                </tr>
+
+                <tr>
+                    <td>Enter Age:</td>
+                    <td>
+                        <input type="number" maxlength="10" formControlName="Age">
+                </tr>
+
+            </div>
+
+
+
+
+
+
+            <div class="container">
+               
+
+                <tr style="display: flex;justify-content: space-around;">
+                    <td colspan="3" align="center">
+                        <button class="btn " [disabled]="studentForm.invalid"
+                            style="border: 2px solid #d3bd12 ; border-radius: 15px;">Add
+                            customer</button>
+                    </td>
+                </tr>
+                <tr style="display: flex;justify-content: space-around;">
+                    <td colspan="3" align="center">
+                        <button class="btn " routerLink="/admin/student"
+                            style="border: 2px solid #d3bd12 ; border-radius: 15px;">Back To
+                            customer</button>
+                    </td>
+                </tr>
+            </div>
+
+
+
+
+
+        </table>
+
+    </form>
+</body>
